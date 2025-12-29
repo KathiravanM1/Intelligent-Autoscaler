@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/seat")
 def seat():
-    time.sleep(random.uniform(0.4, 0.7))
+    time.sleep(random.uniform(5, 10))
     return "Seat registered\n"
 
 @app.route("/health")

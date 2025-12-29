@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: seat-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: seat-service
+  template:
+    metadata:
+      labels:
+        app: seat-service
+    spec:
+      containers:
+      - name: seat-service
+        image: seat-service:1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
